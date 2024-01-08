@@ -5,7 +5,7 @@ var MontoProducto = prompt("Ingrese el monto del producto");
 {alert (Nombre + " " + Apellido + " " + "su monto a pagar es" + " " + MontoProducto);} 
 
 let Titular = prompt ("Es usted el/la titular de la tarjeta?");
-    while (titular != "si") 
+    while (titular != "si"); 
         {alert ("Solo el titular puede realizar la compra.");}
         {alert ("Pulse Enter para seguir con la compra!");}
 
