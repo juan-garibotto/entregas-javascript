@@ -1,14 +1,15 @@
-let nombre = prompt ("Ingrese su nombre");
-let apellido = prompt ("Ingrese su apellido");
-var MontoProducto = prompt ("Ingrese el monto del producto");
+let Nombre = prompt("Ingrese su nombre");
+let Apellido = prompt("Ingrese su apellido");
+var MontoProducto = prompt("Ingrese el monto del producto");
 
-{alert (nombre + " " + apellido + " " + "su monto a pagar es" + " " + MontoProducto);} 
+{alert (Nombre + " " + Apellido + " " + "su monto a pagar es" + " " + MontoProducto);} 
 
-let titular = prompt ("Es usted el/la titular de la tarjeta?");
-    while (titular != "si") {alert ("Solo el titular puede realizar la compra.");}
+let Titular = prompt ("Es usted el/la titular de la tarjeta?");
+    while (titular != "si") 
+        {alert ("Solo el titular puede realizar la compra.");}
         {alert ("Pulse Enter para seguir con la compra!");}
 
-let pagos = Number (prompt ("En cuantas cuotas desea abonarlo?"));
+let Pagos = Number (prompt ("En cuantas cuotas desea abonarlo?"));
 
 var pagoTres = 3;
 var pagoSeis = 6;
