@@ -1,37 +1,28 @@
-let Nombre = prompt("Ingrese su nombre");
-let Apellido = prompt("Ingrese su apellido");
-var MontoProducto = prompt("Ingrese el monto del producto");
+let nombre = prompt("Ingrese su nombre");
+let apellido = prompt("Ingrese su apellido");
 
-{alert (Nombre + " " + Apellido + " " + "su monto a pagar es" + " " + MontoProducto);} 
+alert( "Hola" + " " + nombre + " " + apellido + "!");
 
-let Titular = prompt ("Es usted el/la titular de la tarjeta?");
-    while (titular != "si"); 
-        {alert ("Solo el titular puede realizar la compra.");}
-        {alert ("Pulse Enter para seguir con la compra!");}
+let titular = prompt("¿Es usted el/la titular de la tarjeta?");
 
-let Pagos = Number (prompt ("En cuantas cuotas desea abonarlo?"));
+while (titular.toLowerCase() !== "si") {
+    alert("Solo el titular puede realizar la compra.");}
 
-var pagoTres = 3;
-var pagoSeis = 6;
-var pagoDoce = 12;
-var pagoVenti = 24; 
+function cuotasTarjeta(montoTotalTarjeta, pagos) {
+    var cuotaMensual = montoTotalTarjeta / pagos;
+    return cuotaMensual;}
 
-var divTres = MontoProducto / pagoTres ;
-var divSeis = MontoProducto / pagoSeis ;
-var divDoce = MontoProducto / pagoDoce ;
-var divVenti = MontoProducto / pagoVenti ;
+var pagos = parseInt(prompt("Ingrese la cantidad de cuotas (3, 6, 12, 24):"));
 
+if (pagos === 3 || pagos === 6 || pagos === 12 || pagos === 24) {
+  
+    var montoTotalTarjeta = parseFloat(prompt("Ingrese el monto total de la tarjeta de crédito:"));
 
+    var cuotaMensualTarjeta = cuotasTarjeta(montoTotalTarjeta, pagos);
 
-if (pagos === 3) 
-alert ("Elegiste el pago en 3 cuotas de" + " "  + divTres );
-    else if ( pagos === 6) 
-    alert ("Elegiste el pago en 6 cuotas de" + " "  + divSeis );
-        else if ( pagos === 12) 
-        alert ("Elegiste el pago en 12 cuotas de" + " "  + divDoce );
-            else if ( pagos === 24) 
-            alert ("Elegiste el pago en 24 cuotas de" + " "  + divVenti );
-                else {alert ("No tenemos esa cantidad de cuotas");}
+    alert("La cuota mensual de la tarjeta de crédito es: $" + cuotaMensualTarjeta);} 
+else {
+    alert("No tenemos esa cantidad de cuotas");}
 
 
 
