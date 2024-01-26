@@ -38,10 +38,10 @@ const productos = [
 
 let tipoBusqueda = prompt("Ingrese el tipo de prenda que busca").toLowerCase();
 
-// Filtrar la lista de productos según el tipo de prenda
+// Filtrar la lista de productos 
 let productosFiltrados = productos.filter(item => item.prenda.toLowerCase().includes(tipoBusqueda));
 
-// Mostrar la lista de productos filtrada en un solo alert
+// Mostrar la lista de productos 
 if (productosFiltrados.length > 0) {
     let mensaje = "Productos encontrados:\n";
     productosFiltrados.forEach((producto, index) => {
@@ -52,7 +52,6 @@ if (productosFiltrados.length > 0) {
 
     let seleccionProducto = parseInt(prompt("Ingrese el número del producto que desea comprar:"));
 
-    // Verificar si la selección es válida
     if (seleccionProducto >= 1 && seleccionProducto <= productosFiltrados.length) {
         let productoSeleccionado = productosFiltrados[seleccionProducto - 1];
 
