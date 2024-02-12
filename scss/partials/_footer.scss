@@ -1,0 +1,25 @@
+.logo-redes {
+
+    width:30px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+footer {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 10px;
+}
+
+.texto-footer {
+
+    font: 'Lato' Sans Serif;
+    font-weight: 500;
+    margin-top: 10px;
+
+}

@@ -1,0 +1,94 @@
+#containerCarrito {
+
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding: 10px;
+}
+
+.tarjeta-carrito {
+
+    display: flex;
+    align-items: center;
+    height: 200px;
+    gap: 40px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+
+.tarjeta-carrito img{
+    height: 100%;
+  }
+  
+.tarjeta-carrito h3{
+    width: 130px;
+    color: black;
+    font-size: large;
+    font-weight: 700;
+    font-family: 'Lato' sans-serif;
+  }
+
+.tarjeta-carrito p{
+    width: 130px;
+    color: black;
+    font-size: medium;
+    font-family: 'Lato' sans-serif;
+    font-weight: 400;
+  }
+
+.tarjeta-carrito div{
+    background-color: rgb(87, 76, 76);
+    padding: 3px;
+    border-radius: 5px;
+  }
+
+#total {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    text-align:left;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+#totalPrecio {
+    color: black;
+    font-family: 'Lato' sans-serif;
+    font-size: larger;
+    font-weight: 500;
+    left: 30px;
+    margin-top: 15px;    
+}
+
+#botones {
+    display: flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-top: 10px;
+    gap: 5px;
+    margin-right: 40px;
+
+    
+}
+
+#botonCarrito {
+
+border: 1px solid gray;
+background-color: rgb(196, 194, 193);
+padding: 5px 10px;  
+margin-right: 50px;  
+}
+
+#reinicio {
+border: 1px solid gray;
+background-color: rgb(196, 194, 193);
+padding: 5px 10px;  
+margin-right: 50px; 
+
+}
+
+#costoTotal {
+
+  color: black;
+}
