@@ -47,17 +47,18 @@
     width: 100%;
     height: 150px;
     display: flex;
-    text-align:left;
     justify-content: center;
     margin-top: 15px;
 }
+
+
 
 #totalPrecio {
     color: black;
     font-family: 'Lato' sans-serif;
     font-size: larger;
     font-weight: 500;
-    left: 30px;
+    margin-left: 170px;
     margin-top: 15px;    
 }
 
@@ -67,7 +68,7 @@
     justify-content:space-between;
     margin-top: 10px;
     gap: 5px;
-    margin-right: 40px;
+    margin-left: -220px;
 
     
 }
