@@ -3,9 +3,9 @@
     height: 100%;
     width: 100%;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: center;
     align-items: center;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -13,6 +13,7 @@
 
 .tarjeta-prenda {
 
+    
     max-width: 400px;
     background-color: rgb(175, 173, 173);
     text-align: center;
