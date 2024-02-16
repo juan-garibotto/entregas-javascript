@@ -9,7 +9,7 @@ function crearTarjetasProductosCarrito() {
           const nuevoElementoCarrito = document.createElement("div");
           nuevoElementoCarrito.classList = "tarjeta-carrito";
           nuevoElementoCarrito.innerHTML = `
-            <img src="./img/${producto.img}" alt="${producto.nombre}">
+            <img src="./img/${producto.img}">
             <h3>${producto.nombre}</h3>
             <p>$${producto.precio}</p>
             <div>
@@ -18,6 +18,9 @@ function crearTarjetasProductosCarrito() {
               <button class="botonSumar">+</button>
             </div>
           `;
+
+          contenedorCarrito.appendChild(nuevoElementoCarrito);
+
           const botonRestar = nuevoElementoCarrito.querySelector(".botonRestar");
           const botonSumar = nuevoElementoCarrito.querySelector(".botonSumar");
           const cantidad = nuevoElementoCarrito.querySelector(".cantidad");
@@ -43,7 +46,7 @@ function crearTarjetasProductosCarrito() {
               actualizarNumeroTarjeta();;
           });
 
-          contenedorCarrito.appendChild(nuevoElementoCarrito);
+         
       });
   }
   actualizarTotales();

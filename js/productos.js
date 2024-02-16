@@ -34,7 +34,7 @@ const productos = [
     {
         id: 6,
         nombre: "Pantalon Negro Over",
-        img: "pantalonoverbazta .jpg",
+        img: "pantalonoverbazta.jpg",
         precio: 68000,
     },
     {
