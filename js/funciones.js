@@ -2,6 +2,15 @@ const tarjetasCarrito = document.querySelectorAll(".tarjeta-carrito");
 const cuentaCarrito = document.getElementById ("num-carrito");
 const precioElemento = document.getElementById ("costoTotal");
 
+function inicializarLocalStorage() {
+  if (!localStorage.getItem("prendas")) {
+    localStorage.setItem("prendas", JSON.stringify([]));
+  }
+}
+
+inicializarLocalStorage();
+
+
 
 function actualizarNumeroTarjeta() {
   const tarjetasCarrito = document.querySelectorAll(".tarjeta-carrito");
@@ -30,17 +39,10 @@ function actualizarTotales() {
       productos.forEach((producto) => {
           total += producto.precio * producto.cantidad;
       });
+
       precioElemento.innerText = total;
-  } else {
-      
-      precioElemento.innerText = "0";
   }
 }
-
-
-
-
-
 
 function actualizarNumeroCarrito() {
   const memoria = JSON.parse(localStorage.getItem("prendas")) || [];
@@ -48,14 +50,13 @@ function actualizarNumeroCarrito() {
 
   if (memoria && memoria.length > 0) {
     cuenta = memoria.reduce((acum, current) => acum + current.cantidad, 0);
-    return cuentaCarrito.innerText = cuenta;
+    cuentaCarrito.innerText = cuenta; // Modifiqué esto para asignar directamente el valor
+  } else {
+    cuentaCarrito.innerText = 0;  
   }
-
-  cuenta.innerText = 0;
 }
 
-actualizarNumeroCarrito ();
-
+actualizarNumeroCarrito();
 
 
   

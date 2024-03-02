@@ -1,6 +1,8 @@
-function crearProductos(productos) {
+function crearProductos() {
     const contenedorProductos = document.getElementById ("seccionProductos");
-    if (productos && productos.length > 0) {
+    fetch ("./js/data.json")
+      .then (response => response.json())
+      .then ((productos) =>  {
       productos.forEach((producto) => {
       const nuevaPrenda = document.createElement("div");
       nuevaPrenda.classList = "tarjeta-prenda";
@@ -14,11 +16,12 @@ function crearProductos(productos) {
       nuevaPrenda.getElementsByTagName ("button")[0].addEventListener("click", () => {
         agregarCarrito(producto);
         actualizarNumeroCarrito ();
+        actualizarTotales();
       });
     });
-  }
+  })
   }
   
-  crearProductos(productos);
+  crearProductos();
   
   

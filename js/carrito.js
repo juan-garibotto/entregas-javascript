@@ -1,11 +1,13 @@
-const contenedorCarrito = document.getElementById("containerCarrito");
-
-
 
 function crearTarjetasProductosCarrito() {
-    const productos = JSON.parse(localStorage.getItem("prendas")) || [];
-      if (productos && productos.length > 0) {
-        productos.forEach((producto) => {
+  const contenedorCarrito = document.getElementById("containerCarrito");
+  fetch("./js/data.json")
+    .then(response => response.json())
+    .then((productos) => {
+      productos.forEach((producto) => {
+        // Verificar si la cantidad en el localStorage es mayor que cero
+        const cantidadEnCarrito = localStorage.getItem(`cantidad-${producto.id}`);
+
           const nuevoElementoCarrito = document.createElement("div");
           nuevoElementoCarrito.classList = "tarjeta-carrito";
           nuevoElementoCarrito.innerHTML = `
@@ -14,7 +16,7 @@ function crearTarjetasProductosCarrito() {
             <p>$${producto.precio}</p>
             <div>
               <button class="botonRestar">-</button>
-              <span class="cantidad" >${localStorage.getItem(`cantidad-${producto.id}`) || 1}</span>
+              <span class="cantidad">${cantidadEnCarrito}</span>
               <button class="botonSumar">+</button>
             </div>
           `;
@@ -25,42 +27,33 @@ function crearTarjetasProductosCarrito() {
           const botonSumar = nuevoElementoCarrito.querySelector(".botonSumar");
           const cantidad = nuevoElementoCarrito.querySelector(".cantidad");
 
-
           botonRestar.addEventListener("click", () => {
-              const nuevaCantidad = restarCarrito(producto);
-              if (nuevaCantidad >= 1) {
-                  cantidad.textContent = nuevaCantidad;
-              } else {
-                  contenedorCarrito.removeChild(nuevoElementoCarrito);
-              }
-              actualizarTotales();
-              actualizarNumeroCarrito();
-              actualizarNumeroTarjeta();;
+            const nuevaCantidad = restarCarrito(producto);
+            if (nuevaCantidad >= 1) {
+              cantidad.textContent = nuevaCantidad;
+            } else {
+              contenedorCarrito.removeChild(nuevoElementoCarrito);
+            }
+            actualizarTotales();
+            actualizarNumeroCarrito();
+            actualizarNumeroTarjeta();
           });
 
           botonSumar.addEventListener("click", () => {
-              const nuevaCantidad = agregarCarrito(producto);
-              cantidad.textContent = nuevaCantidad;
-              actualizarTotales();
-              actualizarNumeroCarrito();
-              actualizarNumeroTarjeta();;
+            const nuevaCantidad = agregarCarrito(producto);
+            cantidad.textContent = nuevaCantidad;
+            actualizarTotales();
+            actualizarNumeroCarrito();
+            actualizarNumeroTarjeta();
           });
-
-         
-      });
-  }
-  actualizarTotales();
-  actualizarNumeroCarrito();
-  actualizarNumeroTarjeta();
-
- 
+        }
+      );
+    }
+    
+)
+    actualizarTotales();
+    actualizarNumeroCarrito();
+    actualizarNumeroTarjeta();
 }
 
 crearTarjetasProductosCarrito();
-    
-
-
-
-    
-   
-    
