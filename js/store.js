@@ -17,6 +17,8 @@ function crearProductos() {
         agregarCarrito(producto);
         actualizarNumeroCarrito ();
         actualizarTotales();
+        Swal.fire("¡Producto agregado al carrito!", "", "success");
+        
       });
     });
   })
