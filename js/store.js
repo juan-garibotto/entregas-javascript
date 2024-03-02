@@ -14,10 +14,10 @@ function crearProductos() {
       `;
       contenedorProductos.appendChild(nuevaPrenda);
       nuevaPrenda.getElementsByTagName ("button")[0].addEventListener("click", () => {
+        Swal.fire("¡Producto agregado al carrito!", "", "success");
         agregarCarrito(producto);
         actualizarNumeroCarrito ();
         actualizarTotales();
-        Swal.fire("¡Producto agregado al carrito!", "", "success");
         
       });
     });
